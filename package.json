@@ -1,13 +1,25 @@
 {
-  "name": "three-dxf",
+  "name": "@f12o/three-dxf",
   "version": "1.3.1",
   "description": "A dxf viewer for the browser using three.js.",
-  "main": "dist/three-dxf.js",
-  "module": "src/index.js",
+  "type": "module",
+  "main": "./dist/three-dxf.cjs",
+  "module": "./dist/three-dxf.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/three-dxf.mjs",
+      "require": "./dist/three-dxf.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build-dev": "webpack -c webpack.dev.js",
-    "build": "webpack -c webpack.prod.js",
-    "prepublishOnly": "npm run build"
+    "build": "vite build",
+    "dev": "vite dev",
+    "format": "oxfmt -w src",
+    "lint": "oxlint \"src/**/*.{js,ts}\"",
+    "prepublishOnly": "pnpm run build"
   },
   "repository": {
     "type": "git",
@@ -24,9 +36,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^5.52.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-merge": "^5.8.0"
+    "oxfmt": "^0.19.0",
+    "oxlint": "^1.34.0",
+    "rolldown-vite": "^7.3.0"
   },
   "peerDependencies": {
     "three": "0.x.x"
@@ -39,5 +51,6 @@
   "dependencies": {
     "@dxfom/mtext": "^0.3.2",
     "troika-three-text": "^0.42.0"
-  }
+  },
+  "packageManager": "pnpm@10.11.0"
 }
