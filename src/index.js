@@ -302,7 +302,7 @@ export function Viewer(data, parent, width, height, font) {
             }
         }
         return {
-            text: text.join(),
+            text: text.join(''),
             style: activeStyle
         }
     }
