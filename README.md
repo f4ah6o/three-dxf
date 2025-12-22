@@ -6,7 +6,7 @@
 
 #### Install
 ```
-npm install three-dxf
+pnpm add @f12o/three-dxf
 ```
 
 For now we recommend cloning the repo, and starting with our sample. See **Run Samples** below.
@@ -24,17 +24,16 @@ cadCanvas = new ThreeDxf.Viewer(dxf, document.getElementById('cad-view'), 400, 4
 #### Run Samples
 ```
 # first, compile three-dxf
-> npm install
-> npm run build
+> pnpm install
+> pnpm build
 
 # then install the sample's dependencies
 > cd sample
-> npm install
+> pnpm install
 
 # go back to the root and run http-server to run the sample
 > cd ..
-> npm install -g http-server@0.9.0
-> http-server .
+> pnpm dlx http-server@0.9.0 .
 # use `http-server -c-1 .` to prevent caching
 ```
 
