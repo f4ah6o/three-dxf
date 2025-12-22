@@ -86,12 +86,12 @@ function onSuccess(evt){
     //  and enable TextGeometry. See this example http://threejs.org/examples/?q=text#webgl_geometry_text
     //  and this discussion https://github.com/mrdoob/three.js/issues/7398 
     var font;
-    var loader = new THREE.FontLoader();
-    loader.load( 'fonts/helvetiker_regular.typeface.json', function ( response ) {
-        font = response;
+    var loader = new THREE.TTFLoader();
+    loader.load('fonts/NotoSansJP-Regular.otf', function (json) {
+        font = new THREE.FontLoader().parse(json);
         cadCanvas = new window.ThreeDxf.Viewer(dxf, document.getElementById('cad-view'), 1000, 800, font);
     });
-    
+
 }
 
 function handleDragOver(evt) {
