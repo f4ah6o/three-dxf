@@ -6,7 +6,7 @@
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {
-    "@f12o/dxf-parser": "^1.0.2",
+    "@f12o/dxf-parser": "^1.2.0",
     "three": "^0.132.2"
   }
 }
