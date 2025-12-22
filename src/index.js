@@ -92,8 +92,8 @@ export function Viewer(data, parent, width, height, font) {
     // Create scene from dxf object (data)
     var i, entity, obj, min_x, min_y, min_z, max_x, max_y, max_z;
     var dims = {
-        min: { x: 0, y: 0, z: 0 },
-        max: { x: 0, y: 0, z: 0 }
+        min: { x: Infinity, y: Infinity, z: Infinity },
+        max: { x: -Infinity, y: -Infinity, z: -Infinity }
     };
     for (i = 0; i < data.entities.length; i++) {
         entity = data.entities[i];
@@ -111,6 +111,13 @@ export function Viewer(data, parent, width, height, font) {
         }
         obj = null;
     }
+
+    if (!isFinite(dims.min.x)) dims.min.x = 0;
+    if (!isFinite(dims.min.y)) dims.min.y = 0;
+    if (!isFinite(dims.min.z)) dims.min.z = 0;
+    if (!isFinite(dims.max.x)) dims.max.x = 0;
+    if (!isFinite(dims.max.y)) dims.max.y = 0;
+    if (!isFinite(dims.max.z)) dims.max.z = 0;
 
     width = width || parent.clientWidth;
     height = height || parent.clientHeight;
