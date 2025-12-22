@@ -26,17 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gdsestimating/three-dxf"
+    "url": "https://github.com/f4ah6o/three-dxf"
   },
   "bugs": {
-    "url": "https://github.com/gdsestimating/three-dxf/issues",
-    "email": "bzuillsmith@gmail.com"
+    "url": "https://github.com/f4ah6o/three-dxf/issue"
   },
-  "homepage": "https://github.com/gdsestimating/three-dxf",
-  "author": "GDS Storefront Estimating (gdsestimating.com)",
-  "contributors": [
-    "Ben Zuill-Smith <bzuillsmith@gmail.com>"
-  ],
+  "homepage": "https://github.com/f4ah6o/three-dxf",
+  "author": "f12o",
   "license": "MIT",
   "devDependencies": {
     "oxfmt": "^0.19.0",
