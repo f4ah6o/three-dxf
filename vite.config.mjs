@@ -6,8 +6,12 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
       name: 'ThreeDxf',
-      fileName: (format) => (format === 'es' ? 'three-dxf.mjs' : 'three-dxf.cjs'),
-      formats: ['es', 'cjs']
+      fileName: (format) => {
+        if (format === 'es') return 'three-dxf.mjs';
+        if (format === 'cjs') return 'three-dxf.cjs';
+        return 'three-dxf.js';
+      },
+      formats: ['es', 'cjs', 'umd']
     },
     rollupOptions: {
       external: ['three', 'troika-three-text', '@dxfom/mtext'],
