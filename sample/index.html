@@ -2,6 +2,14 @@
 <head>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
 
+    <script type="importmap">
+        {
+            "imports": {
+                "loglevel": "https://cdn.jsdelivr.net/npm/loglevel@1.9.2/+esm"
+            }
+        }
+    </script>
+
     <script type="module">
         import DxfParser from 'https://cdn.jsdelivr.net/npm/@f12o/dxf-parser@1.2.0/esm/index.js';
         window.DxfParser = DxfParser;
