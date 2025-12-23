@@ -73,7 +73,13 @@ function onSuccess(evt){
     progress.style.width = '100%';
     progress.textContent = '100%';
     setTimeout(function() { $progress.classList.remove('loading'); }, 2000);
-    var parser = new window.DxfParser();
+    var DxfParserClass = window.DxfParser && (window.DxfParser.default || window.DxfParser);
+
+    if (typeof DxfParserClass !== 'function') {
+        throw new Error('DXF parser library failed to load.');
+    }
+
+    var parser = new DxfParserClass();
     var dxf = parser.parseSync(fileReader.result);
     
     if(dxf) {
