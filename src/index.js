@@ -160,7 +160,7 @@ export function Viewer(data, parent, width, height, font) {
 
     var renderer = this.renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
-    renderer.setClearColor(0xfffffff, 1);
+    renderer.setClearColor(0xffffff, 1);
 
     parent.appendChild(renderer.domElement);
     parent.style.display = 'block';
@@ -196,7 +196,7 @@ export function Viewer(data, parent, width, height, font) {
         //        camera.updateProjectionMatrix();
 
         renderer.setSize(width, height);
-        renderer.setClearColor(0xfffffff, 1);
+        renderer.setClearColor(0xffffff, 1);
         this.render();
     };
 
