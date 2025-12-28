@@ -83,9 +83,9 @@ function onSuccess(evt){
     var dxf = parser.parseSync(fileReader.result);
     
     if(dxf) {
-        dxfContentEl.innerHTML = JSON.stringify(dxf, null, 2);
+        dxfContentEl.textContent = JSON.stringify(dxf, null, 2);
     } else {
-        dxfContentEl.innerHTML = 'No data.';
+        dxfContentEl.textContent = 'No data.';
     }
 
     // Three.js changed the way fonts are loaded, and now we need to use FontLoader to load a font
